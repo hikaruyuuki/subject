@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+
+<div class="top">
+    <h2 class="top__title">科目一覧</h2>
+    <div class="top__add">
+    <a href="/addsubject" class="top__add-button">科目追加はこちら</a>
+        </div>
+    </div>
+    <table class="main">
+        <tr>
+            <th>詳細</th>
+
+
+            <th>削除</th>
+            <th>編集</th>
+        </tr>
+        {% for subject in subjects %}
+        <tr>
+            <td><a href="{{url_for('detail',id=subject.id)}}">{{subject.subject}}</a></td>
+            <td><form action="{{url_for('delete_subject',id=subject.id)}}" method="POST" >
+                <input  class="main__btn main__btn--red" type="submit" value="削除">
+            </form></td>
+            <td><form action="{{url_for('update_link',id=subject.id)}}" method="POST">
+                <input class="main__btn" type="submit" value="編集" >
+            </form></td>
+
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

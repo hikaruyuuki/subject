@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+<h1>{{detail.subject}}のページ</h1>
+<hr>
+<h2 class="detail"><span>教員</span></h2>
+<p>{{detail.teacher}}<p></p>
+<h2 class="detail"><span>試験日</span></h2>
+<p>{{detail.date}}</p>
+<h2 class="detail"><span>詳細情報</span></h2>
+<p>{{detail.comment}}</p><hr>
+</div>
+<a href="/subjectlist" style="text-align:center;">戻る</a>
+
+{% endblock %}

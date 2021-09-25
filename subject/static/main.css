@@ -1,0 +1,67 @@
+
+html{
+ margin:0px 10px 0px 10px;
+ }
+.header__title{color:white;
+text-align:center;
+text-shadow:black 1px 1px;
+font-family:"ヒラギノ丸ゴ ProN";
+}
+.header{
+background-color:deepskyblue;
+
+}
+.header__subtitle{color:white;
+font-family:"ヒラギノ丸ゴ ProN";
+}
+.top{
+display:flex;
+}
+.top__add{
+position:relative;
+top:30px;
+left:30px;
+
+}
+table{
+text-align: center;
+ border-collapse:collapse;
+
+}
+.main__btn{
+width:150px;
+}
+.main__btn--red{
+color:red;
+}
+th,td{
+padding:20px 20px 20px 20px;
+border:1px solid ;
+margin 0;
+}
+th{
+background-color:mediumseagreen;
+
+}
+td{
+background-color:lightgreen;
+}
+input[type="text"],[type="date"] {
+height:30px;
+width:700px;
+}
+
+textarea{
+width: 700px;
+margin: 10px 0;
+vertical-align:middle;
+}
+form{
+line-height:50px;
+}
+.detail{
+width:100px;
+background-color:blue;
+color:white;
+padding:10px;
+}

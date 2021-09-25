@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>編集画面</h1>
+<div class="form">
+<form action ="{{url_for('update_subject', id=post.id)}}" method="POST">
+    <label for="subject">科目名</label>
+    <input required id="subject" type="text" name="subject" placeholder="科目名入力" value={{post.subject}}><br>
+    <label for="teacher">教員名</label>
+    <input required id="teacher"　placeholder="教員を入力" type="text" name="teacher" value={{post.teacher}}><br>
+    <label for="date">試験日</label>
+        <input id="date" type="date" name="date" placeholder="試験日" value={{post.date}}><br>
+    <label for ="contents">その他</label>
+        <textarea name="content" id="contents" cols="40" rows="10">{{post.comment}}</textarea><br>
+        <input type="submit" value="編集">
+</form>
+</div>
+{% endblock %}

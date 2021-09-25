@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>{{add}}</h1>
+<div class="form">
+    <form method="POST" action="/create">
+<label for ="subject">科目名:</label>
+        <input id="subject" type="text" name="subject" placeholder="科目名を入力" required><br>
+        <label for ="teacher">教員名:</label>
+        <input id="teacher" type="text" name="teacher" placeholder="教員を入力"><br>
+
+        <label for="date">試験日:</label>
+        <input id="date" type="date" name="date" placeholder="試験日の設定"><br>
+        <label for="content">その他:</label>
+        <textarea id="content" name="content" cols="40" rows="10"></textarea><br>
+        <input type="submit" value="追加">
+    </form>
+
+</div>
+
+{% endblock %}
