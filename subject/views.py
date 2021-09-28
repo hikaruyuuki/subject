@@ -29,7 +29,8 @@ def create():
 
 
     addlist=Subject(teacher=request.form['teacher'],subject=request.form['subject'],date=request.form['date'],
-        comment=request.form['content']
+        comment=request.form['content'],exam=request.form['exam'], exammid=request.form['exammid'],
+                                                    datemid=request.form['datemid'],
     )
     db.session.add(addlist)
     db.session.commit()
@@ -53,6 +54,8 @@ def update_subject(id):
     post.date=request.form['date']
     post.comment=request.form['content']
     post.teacher=request.form['teacher']
+    post.exam=request.form['exam']
+    post.exammid=request.form['exammid']
     db.session.commit()
     return redirect(url_for('subjectlist'))
 

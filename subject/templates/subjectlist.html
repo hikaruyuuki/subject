@@ -11,8 +11,8 @@
     </div>
     <table class="main">
         <tr>
-            <th>詳細</th>
-
+            <th>科目名</th>
+　　　　　　　<th>教員名</th>
 
             <th>削除</th>
             <th>編集</th>
@@ -20,7 +20,8 @@
         {% for subject in subjects %}
         <tr>
             <td><a href="{{url_for('detail',id=subject.id)}}">{{subject.subject}}</a></td>
-            <td><form action="{{url_for('delete_subject',id=subject.id)}}" method="POST" >
+            <td>{{subject.teacher}}</td>
+            <td><form action="{{url_for('delete_subject',id=subject.id)}}" method="POST" onsubmit="return confirm()" >
                 <input  class="main__btn main__btn--red" type="submit" value="削除">
             </form></td>
             <td><form action="{{url_for('update_link',id=subject.id)}}" method="POST">

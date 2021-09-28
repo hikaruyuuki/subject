@@ -4,15 +4,23 @@
     <h1>{{add}}</h1>
 <div class="form">
     <form method="POST" action="/create">
-<label for ="subject">科目名:</label>
+<label for ="subject">科目名:(必須)</label>
         <input id="subject" type="text" name="subject" placeholder="科目名を入力" required><br>
-        <label for ="teacher">教員名:</label>
-        <input id="teacher" type="text" name="teacher" placeholder="教員を入力"><br>
-
-        <label for="date">試験日:</label>
-        <input id="date" type="date" name="date" placeholder="試験日の設定"><br>
+        <label for ="teacher">教員名:(必須)</label>
+        <input id="teacher" type="text" name="teacher" placeholder="教員を入力" required><br>
+        <label for ="yesnomid">中間試験の有無(必須)</label>
+    <input id="yesnomid"  type="radio"name="exammid" value="有" >有
+    <input  type="radio"name="exammid" value="無" checked>無<br>
+        <label for="datemid">中間試験日:</label>
+        <input id="datemid" type="date" name="datemid" ><br>
+       <label for ="yesno">期末試験の有無(必須)</label>
+    <input id="yesno"  type="radio"name="exam" value="有" >有
+    <input  type="radio"name="exam" value="無" checked>無<br>
+        <label for="date">期末試験日:</label>
+        <input id="date" type="date" name="date" ><br>
         <label for="content">その他:</label>
-        <textarea id="content" name="content" cols="40" rows="10"></textarea><br>
+        <br>
+        <textarea id="content" name="content" cols="40" rows="10" placeholder="例:小テスト、発表、試験範囲等について入力" ></textarea><br>
         <input type="submit" value="追加">
     </form>
 

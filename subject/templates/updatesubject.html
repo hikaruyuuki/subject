@@ -4,14 +4,36 @@
 <h1>編集画面</h1>
 <div class="form">
 <form action ="{{url_for('update_subject', id=post.id)}}" method="POST">
-    <label for="subject">科目名</label>
+    <label for="subject">科目名(必須)</label>
     <input required id="subject" type="text" name="subject" placeholder="科目名入力" value={{post.subject}}><br>
-    <label for="teacher">教員名</label>
+    <label for="teacher">教員名(必須)</label>
     <input required id="teacher"　placeholder="教員を入力" type="text" name="teacher" value={{post.teacher}}><br>
-    <label for="date">試験日</label>
+    {% if post.exammid=="有" %}
+    <label for ="yesmid">中間試験の有無</label>
+    <input id="yesmid"  type="radio"name="exammid" checked value="有" ><label>有</label>
+    <input  type="radio"name="exammid" value="無"><label>無</label><br>
+    {%  elif post.exammid=="無" %}
+    <label for ="nomid">中間試験の有無</label>
+    <input  type="radio"name="exam"  value="有" ><label>有</label>
+    <input id="nomid"  type="radio"name="exammid" checked  value="無"　><label>無</label><br>
+    {% endif %}
+    <label for="date">中間試験日</label>
+        <input id="datemid" type="date" name="datemid" placeholder="試験日" value={{post.datemid}}><br>
+
+    {% if post.exam=="有" %}
+    <label for ="yes">期末試験の有無</label>
+    <input id="yes"  type="radio"name="exam" checked value="有" ><label>有</label>
+    <input  type="radio"name="exam" value="無"><label>無</label><br>
+    {%  elif post.exam=="無" %}
+    <label for ="no">期末試験の有無</label>
+    <input  type="radio"name="exam"  value="有" ><label>有</label>
+    <input id="no"  type="radio"name="exam" checked  value="無"　><label>無</label><br>
+    {% endif %}
+
+    <label for="date">期末試験日</label>
         <input id="date" type="date" name="date" placeholder="試験日" value={{post.date}}><br>
     <label for ="contents">その他</label>
-        <textarea name="content" id="contents" cols="40" rows="10">{{post.comment}}</textarea><br>
+        <textarea name="content" id="contents" cols="40" rows="10"　placeholder="例:小テスト、発表、試験範囲等について入力">{{post.comment}}</textarea><br>
         <input type="submit" value="編集">
 </form>
 </div>

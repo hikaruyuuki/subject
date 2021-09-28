@@ -5,9 +5,17 @@
 <hr>
 <h2 class="detail"><span>教員</span></h2>
 <p>{{detail.teacher}}<p></p>
-<h2 class="detail"><span>試験日</span></h2>
-<p>{{detail.date}}</p>
-<h2 class="detail"><span>詳細情報</span></h2>
+<h2 class="detail"><span>試験情報</span></h2>
+    <p>中間試験の有無:{{detail.exammid}}</p>
+    {% if detail.exammid=="有" %}
+    <p>中間試験日:{{detail.datemid}}</p>
+    {% endif %}
+    <p>期末試験の有無:{{detail.exam}}</p>
+    {% if detail.exam=="有" %}
+    <p>期末試験日:{{detail.date}}</p>
+
+    {% endif %}
+<h2 class="detail"><span>その他</span></h2>
 <p>{{detail.comment}}</p><hr>
 </div>
 <a href="/subjectlist" style="text-align:center;">戻る</a>
